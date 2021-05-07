@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="hlavniPane" prefHeight="756.0" prefWidth="1028.0" styleClass="bodybg" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testvedomostniquiz.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <HBox alignment="CENTER" layoutX="16.0" layoutY="359.0" prefHeight="157.0" prefWidth="1009.0">
+         <children>
+            <Button id="tlacitkaVzhled" fx:id="odpoved0" mnemonicParsing="false" onAction="#zmacknuto0" prefHeight="100.0" prefWidth="230.0" text="odpoved0" visible="false" />
+            <VBox prefHeight="157.0" prefWidth="10.0" />
+            <Button id="tlacitkaVzhled" fx:id="odpoved1" mnemonicParsing="false" onAction="#zmacknuto1" prefHeight="100.0" prefWidth="230.0" text="odpoved1" visible="false" />
+            <VBox prefHeight="157.0" prefWidth="10.0" />
+            <Button id="tlacitkaVzhled" fx:id="odpoved2" mnemonicParsing="false" onAction="#zmacknuto2" prefHeight="100.0" prefWidth="230.0" text="odpoved2" visible="false" />
+            <VBox prefHeight="157.0" prefWidth="10.0" />
+            <Button id="tlacitkaVzhled" fx:id="odpoved3" mnemonicParsing="false" onAction="#zmacknuto3" prefHeight="100.0" prefWidth="230.0" text="odpoved3" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="196.0" prefHeight="125.0" prefWidth="999.0">
+         <children>
+            <TextField fx:id="poleOtazky" alignment="CENTER" editable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="93.0" prefWidth="950.0" text="Po stisknutí tlačítka start začne hra">
+               <font>
+                  <Font size="40.0" />
+               </font></TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="-6.0" layoutY="567.0" prefHeight="98.0" prefWidth="1046.0">
+         <children>
+            <ProgressBar fx:id="postupovaLista" prefHeight="39.0" prefWidth="810.0" progress="0.0" visible="false" />
+         </children>
+      </HBox>
+      <Button id="tlacitkoStart" fx:id="tlacitkoStart" layoutX="436.0" layoutY="93.0" mnemonicParsing="false" onAction="#zmacknutoStart" prefHeight="55.0" prefWidth="168.0" styleClass="tlacitkoStart" stylesheets="@style.css" text="Start" textAlignment="CENTER">
+         <font>
+            <Font size="38.0" />
+         </font></Button>
+      <Label fx:id="scoreText" layoutX="10.0" layoutY="3.0" prefHeight="112.0" prefWidth="150.0">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <PieChart fx:id="grafOdpovedi" labelLineLength="40.0" layoutX="640.0" layoutY="213.0" mouseTransparent="true" prefHeight="324.0" prefWidth="392.0" visible="false" />
+      <Button fx:id="tlacitkoTematu" layoutX="890.0" mnemonicParsing="false" onAction="#zmenaTematu" prefHeight="57.0" prefWidth="150.0" styleClass="tlacitkoStart" stylesheets="@style.css" text="Technicke" />
+      <Label fx:id="ukazatelHlasitosti" layoutX="986.0" layoutY="216.0" text="Hlasitost" />
+      <VBox layoutX="981.0" layoutY="59.0" prefHeight="157.0" prefWidth="56.0">
+         <children>
+            <Slider fx:id="nastaveniZvuku" max="10.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="58.0" />
+         </children>
+      </VBox>
+      <ImageView fx:id="obrazek" fitHeight="340.0" fitWidth="464.0" layoutX="290.0" layoutY="181.0" mouseTransparent="true" pickOnBounds="true" visible="false" />
+      <Label fx:id="labelVysledku" alignment="CENTER" layoutX="-4.0" layoutY="516.0" mouseTransparent="true" prefHeight="100.0" prefWidth="1040.0" visible="false">
+         <font>
+            <Font name="Cambria Bold" size="40.0" />
+         </font></Label>
+      <Label fx:id="labelVelkeVysledky" layoutX="43.0" layoutY="321.0" mouseTransparent="true" prefHeight="216.0" prefWidth="291.0" visible="false">
+         <font>
+            <Font name="Cambria" size="96.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <HBox fx:id="HBoxVysledku" layoutX="2.0" layoutY="602.0" prefHeight="157.0" prefWidth="1040.0" visible="false">
+         <children>
+            <VBox prefHeight="157.0" prefWidth="66.0" />
+            <VBox prefHeight="146.0" prefWidth="162.0">
+               <children>
+                  <Button fx:id="ulozitVysledek0" mnemonicParsing="false" onAction="#zmacknutoUlozit0" prefHeight="50.0" prefWidth="163.0" styleClass="dark-blue" stylesheets="@style.css" text="Uložit Vysledek">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="14.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozeneScore0" alignment="CENTER" prefHeight="30.0" prefWidth="119.0" promptText="Score" />
+                  <HBox prefHeight="9.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozenyCas0" alignment="CENTER" prefHeight="24.0" prefWidth="119.0" promptText="Čas" />
+               </children>
+            </VBox>
+            <VBox prefHeight="157.0" prefWidth="23.0" />
+            <VBox prefHeight="146.0" prefWidth="162.0">
+               <children>
+                  <Button fx:id="ulozitVysledek1" mnemonicParsing="false" onAction="#zmacknutoUlozit1" prefHeight="50.0" prefWidth="163.0" styleClass="dark-blue" stylesheets="@style.css" text="Uložit Vysledek">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="14.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozeneScore1" alignment="CENTER" prefHeight="30.0" prefWidth="119.0" promptText="Score" />
+                  <HBox prefHeight="9.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozenyCas1" alignment="CENTER" prefHeight="24.0" prefWidth="119.0" promptText="Čas" />
+               </children>
+            </VBox>
+            <VBox prefHeight="157.0" prefWidth="23.0" />
+            <VBox prefHeight="146.0" prefWidth="162.0">
+               <children>
+                  <Button fx:id="ulozitVysledek2" mnemonicParsing="false" onAction="#zmacknutoUlozit2" prefHeight="50.0" prefWidth="163.0" styleClass="dark-blue" stylesheets="@style.css" text="Uložit Vysledek">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="14.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozeneScore2" alignment="CENTER" prefHeight="30.0" prefWidth="119.0" promptText="Score" />
+                  <HBox prefHeight="9.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozenyCas2" alignment="CENTER" prefHeight="24.0" prefWidth="119.0" promptText="Čas" />
+               </children>
+            </VBox>
+            <VBox prefHeight="157.0" prefWidth="23.0" />
+            <VBox prefHeight="146.0" prefWidth="162.0">
+               <children>
+                  <Button fx:id="ulozitVysledek3" mnemonicParsing="false" onAction="#zmacknutoUlozit3" prefHeight="50.0" prefWidth="163.0" styleClass="dark-blue" stylesheets="@style.css" text="Uložit Vysledek">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="14.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozeneScore3" alignment="CENTER" prefHeight="30.0" prefWidth="119.0" promptText="Score" />
+                  <HBox prefHeight="9.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozenyCas3" alignment="CENTER" prefHeight="24.0" prefWidth="119.0" promptText="Čas" />
+               </children>
+            </VBox>
+            <VBox prefHeight="157.0" prefWidth="23.0" />
+            <VBox prefHeight="146.0" prefWidth="162.0">
+               <children>
+                  <Button fx:id="ulozitVysledek4" mnemonicParsing="false" onAction="#zmacknutoUlozit4" prefHeight="50.0" prefWidth="163.0" styleClass="dark-blue" stylesheets="@style.css" text="Uložit Vysledek">
+                     <font>
+                        <Font size="39.0" />
+                     </font>
+                  </Button>
+                  <HBox prefHeight="14.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozeneScore4" alignment="CENTER" prefHeight="30.0" prefWidth="119.0" promptText="Score" />
+                  <HBox prefHeight="9.0" prefWidth="119.0" />
+                  <TextField fx:id="ulozenyCas4" alignment="CENTER" prefHeight="24.0" prefWidth="119.0" promptText="Čas" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+    </children>
+</AnchorPane>
